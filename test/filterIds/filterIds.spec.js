@@ -1,5 +1,5 @@
 // isInteger.spec.js
-const filterIds = require('../data_processing/filterIds');
+const filterIds = require('../../data_processing/filterIds');
 
 const testDataDates = require('./filterIdsDateData.json');
 const testDataSiteInfo = require('./filterIdsSiteData.json');

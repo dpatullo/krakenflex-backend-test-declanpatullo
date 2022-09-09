@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": " node -r dotenv/config ./bin/www",
-    "test": "jest -u",
+    "test": "jest -u --verbose",
     "lint": "eslint . --ext .js ",
     "lint:fix": "eslint . --ext .js --fix"
   },
