@@ -50,7 +50,6 @@ Script added to automatically fix violaitons if possible.
 
 This request will retrieve the list of available outages from the API, remove any outages before the cut off date, match outage/devices IDs, and attached the relevant name to the outages. The page should display JSON of that data that has been updated.
 
-For now this is 
 
 In the event that the system fails to updates the list or the data cannot be pulled form the API then the error message from the API should be displayed.
 
