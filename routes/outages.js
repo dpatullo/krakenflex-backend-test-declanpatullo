@@ -30,7 +30,7 @@ router.get('/', (req, res, next) => {
     .then(
       (response) => {
         const filteredOutages = filterIds(response[0].data, response[1].data);
-        return matchedOutagesWithNames = nameOutages(filteredOutages, response[1].data);
+        return nameOutages(filteredOutages, response[1].data);
       },
     )
     .then((matchedOutages) => {

@@ -24,8 +24,37 @@ An short example program using Node.JS, Express.JS, Jest and eslint that is desi
 :$ npm run start
 ```
 
-### 2. Package Vulnerabilities
+Service should now be running on
 
+* [http://localhost:3000/](http://localhost:3000/)
+
+### 2. Run the unit tests
+
+```
+:$ npm test
+```
+
+### 3. Run linter (eslint using the AirBnB ruleset)
+```
+:$ npm lint
+```
+
+Script added to automatically fix violaitons if possible.
+```
+:$ npm lint:fix 
+```
+
+### 4. Sending request to update the outage list (with service running)
+
+* [http://localhost:3000/outages](http://localhost:3000/outages)
+
+This request will retrieve the list of available outages from the API, remove any outages before the cut off date, match outage/devices IDs, and attached the relevant name to the outages. The page should display JSON of that data that has been updated.
+
+For now this is 
+
+In the event that the system fails to updates the list or the data cannot be pulled form the API then the error message from the API should be displayed.
+
+### 5. Package Vulnerabilities
 
 Current install shows "Packages have 5 vulnerabilities" 
 Recommend running an npm audit to try to clear any critical issues
@@ -34,17 +63,17 @@ Recommend running an npm audit to try to clear any critical issues
 :$ npm audit fix
 ```
 
-### 3. Data
+### 6. Data
 
 Data is being retrieved from https://api.krakenflex.systems/interview-tests-mock-api/v1.
 Swagger documentation can be found in /Docs
 
 
-### 4. Known Issues
+### 7. Known Issues
 
 -
 
-### 5. Acknowledgements And Additional Packages Used
+### 8. Acknowledgements And Additional Packages Used
 
 Initial app setup done via "express-generator"
 Linting rules used are "eslint-config-airbnb-base"
