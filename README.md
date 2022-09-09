@@ -14,6 +14,19 @@ An short example program using Node.JS, Express.JS, Jest and eslint that is desi
 * [npm version 5+](https://www.npmjs.com/get-npm?utm_source=house&utm_medium=homepage&utm_campaign=free%20orgs&utm_term=Install%20npm)
 * [node version 6+](https://nodejs.org/en/download/)
 
+### 0. Env Variables
+
+As this repo will be made public for review I have removed reference to the .env that is used for the API Key.
+Before this is ran you will need to create a ".env" file in the main project folder simply with the lines:
+
+```
+# API
+KRAKEN_FLEX_API_KEY=XXX-XXX-XXX
+
+```
+
+Replace the XXX with the key that was provided with the task.
+
 
 ### 1. Run the App
 
