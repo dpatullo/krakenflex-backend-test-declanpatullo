@@ -1,6 +1,6 @@
 # Kraken Flex Backend Test
 
-An short example program using Node.JS, Express.JS, Jest and eslint that is designed to interact wtih data from https://api.krakenflex.systems/interview-tests-mock-api/v1:
+An short example program using Node.JS, Express.JS, Jest and eslint that is designed to interact with data from https://api.krakenflex.systems/interview-tests-mock-api/v1:
 
 1. Retrieves all outages from the `GET /outages` endpoint ""
 2. Retrieves information from the `GET /site-info/{siteId}` endpoint for the site with the ID `norwich-pear-tree`
