@@ -2,7 +2,7 @@
   "name": "krakenflex-backend-test-declanpatullo",
   "version": "1.0.0",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": " node -r dotenv/config ./bin/www",
     "test": "jest -u",
     "lint": "eslint . --ext .js ",
     "lint:fix": "eslint . --ext .js --fix"
@@ -11,6 +11,7 @@
     "axios": "^0.27.2",
     "cookie-parser": "^1.4.4",
     "debug": "^2.6.9",
+    "dotenv": "^16.0.2",
     "express": "^4.16.1",
     "http-errors": "^1.6.3",
     "jade": "^1.11.0",
