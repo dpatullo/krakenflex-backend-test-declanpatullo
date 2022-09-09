@@ -1,6 +1,6 @@
 const express = require('express');
 const axios = require('axios');
-const matchIds = require('../data_processing/matchIds')
+const filterIds = require('../data_processing/filterIds')
 
 const router = express.Router();
 
@@ -29,7 +29,7 @@ router.get('/', (req, res, next) => {
   Promise.all([getOutages,getSiteInfo])
   .then(
     response => {
-      matchIds(response[0].data, response[1].data)
+      filterIds(response[0].data, response[1].data)
     }
   )
   .catch()
