@@ -30,14 +30,29 @@ router.get('/', (req, res, next) => {
     .then(
       (response) => {
         const filteredOutages = filterIds(response[0].data, response[1].data);
-        const matchedOutagesWithNames = nameOutages(filteredOutages, response[1].data);
-
-        res.send('Successfuly updated outage list');
+        return matchedOutagesWithNames = nameOutages(filteredOutages, response[1].data);
       },
     )
-    .catch();
+    .then((matchedOutages) => {
+      const siteOutageUpdateConfig = {
+        method: 'post',
+        url: `${KRAKEN_FLEX_URL}/site-outages/${SITE_NAME}`,
+        headers: { 'x-api-key': process.env.KRAKEN_FLEX_API_KEY },
+        data: matchedOutages,
+      };
 
-  // res.send('respond with a resource');
+      return axios(siteOutageUpdateConfig);
+    })
+    .then((siteUpdateResults) => {
+      res.send(`Successfuly updated outage list. New list has been updated with this data ${siteUpdateResults.config.data}`);
+    })
+    .catch((error) => {
+      if (error.response) {
+        res.status(400).send(`Unable to update outages list ${JSON.stringify(error.response.data)}`);
+      } else {
+        res.status(400).send('Unable to update outages list');
+      }
+    });
 });
 
 module.exports = router;
